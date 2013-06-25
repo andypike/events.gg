@@ -1,0 +1,15 @@
+body {
+  background: image-url('home_bg.jpg') center -300px;
+}
+
+.translucent {
+  background-color: rgba(0, 0, 0, 0.8);
+
+  h1, h2, p, li {
+    color: white;
+  }
+
+  ul {
+    margin-left: 35px;
+  }
+}
