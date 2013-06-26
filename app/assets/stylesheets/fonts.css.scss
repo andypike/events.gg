@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'primeregular';
-    src: url('prime_regular_webfont.eot');
-    src: url('prime_regular_webfont.eot?#iefix') format('embedded-opentype'),
-         url('prime_regular_webfont.woff') format('woff'),
-         url('prime_regular_webfont.ttf') format('truetype'),
-         url('prime_regular_webfont.svg#primeregular') format('svg');
+    src: font-url('prime_regular_webfont.eot');
+    src: font-url('prime_regular_webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('prime_regular_webfont.woff') format('woff'),
+         font-url('prime_regular_webfont.ttf') format('truetype'),
+         font-url('prime_regular_webfont.svg#primeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -12,11 +12,11 @@
 
 @font-face {
     font-family: 'primelight';
-    src: url('prime_light_webfont.eot');
-    src: url('prime_light_webfont.eot?#iefix') format('embedded-opentype'),
-         url('prime_light_webfont.woff') format('woff'),
-         url('prime_light_webfont.ttf') format('truetype'),
-         url('prime_light_webfont.svg#primelight') format('svg');
+    src: font-url('prime_light_webfont.eot');
+    src: font-url('prime_light_webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('prime_light_webfont.woff') format('woff'),
+         font-url('prime_light_webfont.ttf') format('truetype'),
+         font-url('prime_light_webfont.svg#primelight') format('svg');
     font-weight: normal;
     font-style: normal;
 }
