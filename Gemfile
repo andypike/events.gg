@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'haml-rails'
 gem 'zurb-foundation'
+gem 'unicorn'
+gem 'capistrano'
 
 group :doc do
   gem 'sdoc', require: false
