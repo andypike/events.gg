@@ -11,6 +11,7 @@ gem 'haml-rails'
 gem 'zurb-foundation'
 gem 'unicorn'
 gem 'capistrano'
+gem 'google-analytics-rails'
 
 group :doc do
   gem 'sdoc', require: false
