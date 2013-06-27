@@ -1,15 +1,9 @@
 require "bundler/capistrano"
 require 'yaml'
 
-desc "Run on UAT server" 
-task :uat do 
-  server "50.116.25.171", :web, :app, :db, primary: true
-  set :environment, "uat"
-end 
-
 desc "Run on LIVE server" 
 task :live do 
-  server "PUT IP HERE", :web, :app, :db, primary: true
+  server "50.116.25.171", :web, :app, :db, primary: true
   set :environment, "live"
 end 
 
