@@ -30,7 +30,7 @@ $default-float: left;
 
 // $body-bg: #fff;
 // $body-font-color: #222;
-$body-font-family: "primelight", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: Lato, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -136,7 +136,7 @@ $body-font-family: "primelight", "Helvetica Neue", "Helvetica", Helvetica, Arial
 
 // Heading font styles
 
-$header-font-family: "primelight", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$header-font-family: Lato, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
 // $header-font-color: #222;
@@ -1203,7 +1203,7 @@ $header-font-family: "primelight", "Helvetica Neue", "Helvetica", Helvetica, Ari
 
 // Background color for the top bar
 
-$topbar-bg: #212D48 !default;
+$topbar-bg: rgba(33,45,72,.7) !default;
 
 // Height and margin
 
