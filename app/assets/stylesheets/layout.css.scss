@@ -1,3 +1,13 @@
 body {
-  background: rgb(33,45,72) image-url('home_bg.jpg') center 0 no-repeat;
+  background: rgb(33,45,72) image-url('home_bg.jpg') center -100px no-repeat;
+
+  h1, h2, h3, h4, p, button, li, a {
+    font-weight: 100;
+  }
+
+  footer {
+    background: black;
+    height: 200px;
+    margin-top: 30px;
+  }
 }

@@ -11,30 +11,38 @@
         .large-6.columns  
           .feed
             %h2 Next Event
-            .next-event.event
-              = link_to image_tag("http://lorempixel.com/120/120"), "#", class: "th"
+            = render 'next_event'
 
             %h2 Events coming up soon
-            .event
-              = link_to image_tag("http://lorempixel.com/85/85"), "#", class: "th"
-            .event
-              = link_to image_tag("http://lorempixel.com/85/85"), "#", class: "th"
-            .event
-              = link_to image_tag("http://lorempixel.com/85/85"), "#", class: "th"
-            .event
-              = link_to image_tag("http://lorempixel.com/85/85"), "#", class: "th"
-            .event
-              = link_to image_tag("http://lorempixel.com/85/85"), "#", class: "th"
-
+            - 5.times do
+              = render 'event'
 
         .large-6.columns
           .signup-area
             %h2 Sign up for an account
 
             .signup
-              %button I'm a gamer
-              %p I watch esports events and want to personalize my feed.
+              = link_to "#", class: "button" do
+                %h3 I'm a gamer
+                %p I watch esports events and want to personalize my feed.
+              %h2 Why sign up?
+              %p See event times in your own timezone.
+              %p Filter your feed by the games you're interested in.
+              %p Setup notifications so you never miss an event.
 
             .signup
-              %button I'm part of an organization
-              %p We plan esports events and would like to promote them.
+              = link_to "#", class: "button" do
+                %h3 I'm part of an organization
+                %p We plan esports events and would like to promote them.
+              %h2 Why sign up?
+              %p Add your events so fans can easily plan when to watch.
+              %p Use our promotional tools to help promote your event.
+              %p Drive more viewers to your event.
+
+      .row
+        .large-12.columns
+          .developer
+            %h2 Are you a developer?
+            %p No problem! We have an API which will enable you to get event data out and use it on your own site or application.
+            %p Help spread the word about up coming esports events.
+            %p More details coming soon :o)

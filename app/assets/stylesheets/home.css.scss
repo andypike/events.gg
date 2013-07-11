@@ -1,35 +1,100 @@
+@import "compass/css3/border-radius";
+
 #home {
   .home-banner {
     h1, p {
-      background: rgba(33,45,72,.7);
+      background: rgba(43, 166, 203, .7);
       padding: 10px;
       color: white;
     }
   }
 
   .feed {
-    min-height: 489px;
-    margin-top: 100px;
+    float: left;
+    width: 100%;
     background: white;
-    padding: 10px;
 
     h2 {
-      margin: 0 0 20px 0;
+      margin: 0;
       font-size: 20px;
+      background: $primary-color;
+      color: white;
+      float: left;
+      width: 100%;
+      padding: 3px 10px;
+    }
+
+    ul.games {
+      list-style: none;
+      margin: 0;
+
+      li {
+        float: left;
+        background: rgb(33,45,72);
+        color: white;
+        padding: 3px 8px;
+        margin-right: 5px;
+        font-size: 12px;
+        @include border-radius(10px);
+      }
     }
 
     .event {
-      margin-bottom: 10px;
+      float: left;
+      width: 100%;
+      clear: both;
+      padding: 10px;
+      border-bottom: solid 1px #999;
+
+      .logo {
+        float: left;
+      }
+
+      .event-details {
+        float: left;
+        margin-left: 10px;
+      }
+
+      h4 {
+        margin-top: 0;
+        font-size: 18px;
+      }
+
+      p {
+        margin-bottom: 10px;
+        font-size: 0.8em;
+      }
+
+      &.next-event {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: none;
+
+        h3 {
+          margin: 0 0 6px;
+          font-weight: 300;
+        }
+
+        p {
+          margin: 0 0 6px;
+          font-size: 1em;
+        }
+      }
     }
   }
 
   .signup-area {
-    margin-top: 265px;
+    margin-top: 165px;
 
     h2 {
       color: white;
       font-size: 20px;
       text-align: center;
+    }
+
+    h3 {
+      color: white;
+      font-size: 24px;
     }
 
     .signup {
@@ -38,9 +103,19 @@
       padding: 20px 10px;
       text-align: center;
 
+      h2 {
+        color: black;
+      }
+
       p {
         margin: 0;
       }
     }
+  }
+
+  .developer {
+    background: white;
+    padding: 20px;
+    margin-top: 30px;
   }
 }

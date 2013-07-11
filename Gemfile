@@ -12,6 +12,7 @@ gem 'zurb-foundation'
 gem 'unicorn'
 gem 'capistrano'
 gem 'google-analytics-rails'
+gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4-hack'
 
 group :doc do
   gem 'sdoc', require: false

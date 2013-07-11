@@ -30,7 +30,7 @@ $default-float: left;
 
 // $body-bg: #fff;
 // $body-font-color: #222;
-$body-font-family: Lato, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: Roboto, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -44,7 +44,7 @@ $body-font-family: Lato, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-s
 
 // Colors
 
-// $primary-color: #2ba6cb;
+$primary-color: #2ba6cb;
 // $secondary-color: #e9e9e9;
 // $alert-color: #c60f13;
 // $success-color: #5da423;
@@ -136,7 +136,7 @@ $body-font-family: Lato, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-s
 
 // Heading font styles
 
-$header-font-family: Lato, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$header-font-family: Roboto, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
 // $header-font-color: #222;
@@ -1216,7 +1216,7 @@ $topbar-bg: rgba(33,45,72,.7) !default;
 
 // Controlling the styles for the title in the top bar
 
-// $topbar-title-weight: bold;
+$topbar-title-weight: 100;
 // $topbar-title-font-size: emCalc(17px);
 
 // Style the top bar dropdown elements
@@ -1233,7 +1233,7 @@ $topbar-bg: rgba(33,45,72,.7) !default;
 // $topbar-link-color: #fff;
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
-// $topbar-link-weight: bold;
+$topbar-link-weight: 100;
 // $topbar-link-font-size: emCalc(13px);
 // $topbar-link-hover-lightness: -30%; // Darken by 30%
 // $topbar-link-bg-hover: darken($topbar-bg, 3%);
