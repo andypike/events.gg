@@ -100,15 +100,19 @@
     .signup {
       background: #ccc;
       margin-top: 20px;
-      padding: 20px 10px;
-      text-align: center;
+      padding: 20px 10px; 
 
       h2 {
         color: black;
+        text-align: left;
       }
 
       p {
         margin: 0;
+      }
+
+      ul {
+        margin: 0 0 0 20px;
       }
     }
   }

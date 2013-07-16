@@ -13,6 +13,7 @@ gem 'unicorn'
 gem 'capistrano'
 gem 'google-analytics-rails'
 gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4-hack'
+gem 'simple_form', '~> 3.0.0.rc'
 
 group :doc do
   gem 'sdoc', require: false
