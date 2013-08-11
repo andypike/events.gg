@@ -20,7 +20,6 @@ class SecurityService
 
   def self.current_user(session)
     id = session[LOGIN_SESSION_KEY]
-
     User.where(:id => id).first if id
   end
 end
