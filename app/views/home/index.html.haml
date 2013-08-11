@@ -1,7 +1,7 @@
 #home
   .row
     .large-12.columns.home-banner
-      %h1 Esports Events
+      %h1 Welcome to Esports Events
       %p We provide a single place to promote esports events to make it as easy as possible for fans so they never miss a click.
 
   .row
@@ -18,28 +18,11 @@
               = render 'event'
 
         .large-6.columns
-          .signup-area
-            %h2 Sign up for an account
 
-            .signup
-              = link_to "#", class: "button" do
-                %h3 I'm a gamer
-                %p I watch esports events and want to personalize my feed.
-              %h2 Why sign up?
-              %ul
-                %li See event times in your own timezone.
-                %li Filter your feed by the games you're interested in.
-                %li Setup notifications so you never miss an event.
-
-            .signup
-              = link_to "#", class: "button" do
-                %h3 I'm part of an organization
-                %p We plan esports events and would like to promote them.
-              %h2 Why sign up?
-              %ul
-                %li Add your events so fans can easily plan when to watch.
-                %li Use our promotional tools to help promote your event.
-                %li Drive more viewers to your event.
+          - if current_user
+            - # TODO
+          - else
+            = render 'signup_area'
 
       .row
         .large-12.columns

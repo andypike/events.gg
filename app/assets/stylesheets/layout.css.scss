@@ -1,8 +1,22 @@
 body {
-  background: rgb(33,45,72) image-url('home_bg.jpg') center -100px no-repeat;
-
   h1, h2, h3, h4, p, button, li, a {
     font-weight: 100;
+  }
+
+  nav.top-bar {
+    margin: 0;
+  }
+
+  .notice {
+    @include alert-base;
+    @include alert-style($success-color);
+    .close { @include alert-close; }
+  }
+
+  .alert {
+    @include alert-base;
+    @include alert-style($alert-color);
+    .close { @include alert-close; }
   }
 
   footer {

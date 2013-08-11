@@ -1,11 +1,16 @@
 @import "compass/css3/border-radius";
 
+body.home {
+  background: rgb(33,45,72) image-url('home_bg.jpg') center -100px no-repeat;
+}
+
 #home {
   .home-banner {
     h1, p {
       background: rgba(43, 166, 203, .7);
       padding: 10px;
       color: white;
+      margin-top: 30px;
     }
   }
 
@@ -100,11 +105,17 @@
     .signup {
       background: #ccc;
       margin-top: 20px;
-      padding: 20px 10px; 
+      padding: 20px; 
+
+      .button {
+        display: block;
+        margin: 0;
+      }
 
       h2 {
         color: black;
         text-align: left;
+        margin: 0 0 10px 0;
       }
 
       p {
@@ -112,7 +123,7 @@
       }
 
       ul {
-        margin: 0 0 0 20px;
+        margin: 0 0 20px 20px;
       }
     }
   }

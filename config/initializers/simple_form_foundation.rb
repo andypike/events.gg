@@ -23,4 +23,6 @@ SimpleForm.setup do |config|
 
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :foundation
+
+  config.form_class = "custom"
 end
