@@ -6,12 +6,4 @@
     .large-12.columns
 
       %h1 Sign up for a free account
-
-      = simple_form_for @user do |f|
-        = f.input :name
-        = f.input :email
-        = f.input :password
-        = f.input :password_confirmation
-        = f.input :time_zone, include_blank: false
-
-        = f.submit "Create account", class: "button"
+      = render 'form', submit_text: "Create account"
