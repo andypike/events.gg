@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
                         presence: true, 
                         email_format: true
 
+  def self.default
+    self.new time_zone: "UTC"
+  end
+
   private 
     def password_required?
       password_digest.blank? || !password.blank?

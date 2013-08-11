@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new(time_zone: "UTC")
+    @user = User.default
   end
 
   def create
-    @user = User.new(user_params)
+    @user = RegistrationService.register(user_params, session)
 
-    if @user.save
-      SecurityService.login(@user, session)
+    if @user.valid?
       redirect_to root_url, notice: "You have successfully created an account."
     else
       render :new

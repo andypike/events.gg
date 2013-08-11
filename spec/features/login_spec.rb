@@ -30,7 +30,17 @@ describe "A member can login" do
     page.should have_content "You have successfully logged into your account"
   end
 
-  it "shows errors if invalid information is entered" do
+  it "shows error if email doesn't match a user" do
+    click_button "Login"
+
+    page.should have_content "Either your email address or password wasn't valid"
+  end
+
+  it "shows error if password doesn't match" do
+    create :user, email: "a@b.com", password: "secret", password_confirmation: "secret"
+
+    fill_in "Email", with: "a@b.com"
+    fill_in "Password", with: "just_a_guess"    
     click_button "Login"
 
     page.should have_content "Either your email address or password wasn't valid"

@@ -44,6 +44,35 @@ describe SecurityService do
   end
 
   context ".authenticate" do
-    pending
+    let(:session_params) { {email: "a@b.com", password: "secret"} }
+    let(:current_user) { stub.as_null_object }
+    let(:session) { stub.as_null_object }
+
+    it "returns nil if no user has the supplied email" do
+      User.stub(:find_by) { nil }
+      user = SecurityService.authenticate(session_params, session)
+      user.should be_nil
+    end
+
+    it "authenticates the matching user and returns it if vaild" do
+      User.stub(:find_by) { current_user }
+      current_user.stub(:authenticate) { true }
+      user = SecurityService.authenticate(session_params, session)
+      user.should == current_user
+    end
+
+    it "authenticates the matching user and returns nil if not valid" do
+      User.stub(:find_by) { current_user }
+      current_user.stub(:authenticate) { false }
+      user = SecurityService.authenticate(session_params, session)
+      user.should be_nil
+    end
+
+    it "logs in the user if it authenticates" do
+      User.stub(:find_by) { current_user }
+      current_user.stub(:authenticate) { true }
+      SecurityService.should_receive(:login).with(current_user, session)
+      SecurityService.authenticate(session_params, session)
+    end
   end
 end

@@ -5,9 +5,12 @@ class SecurityService
     user = User.find_by(email: session_params[:email])
     authenticated = user && user.authenticate(session_params[:password])
 
-    login(user, session) if authenticated
+    if authenticated
+      login(user, session) 
+      return user
+    end
 
-    user
+    nil
   end
 
   def self.login(user, session)
