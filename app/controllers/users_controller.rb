@@ -14,11 +14,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    prep_for_edit
   end
 
   def update
-    @user = current_user
+    prep_for_edit
 
     if @user.update_attributes(user_params)
       redirect_to root_url, notice: "Your settings were successfully updated"
@@ -30,5 +30,10 @@ class UsersController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation, :time_zone)
+    end
+
+    def prep_for_edit
+      @user = current_user
+      authorize! :edit, @user
     end
 end

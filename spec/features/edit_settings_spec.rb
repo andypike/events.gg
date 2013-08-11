@@ -39,4 +39,12 @@ describe "A member can edit their settings" do
 
     page.should have_content "can't be blank"
   end
+
+  it "shows an error message if a non-logged in user tries to access the settings page" do
+    click_on "Logout"
+
+    visit settings_path
+
+    page.should have_content "You need to be logged in before you can access that page"
+  end
 end

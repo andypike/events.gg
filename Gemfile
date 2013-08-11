@@ -15,6 +15,7 @@ gem 'google-analytics-rails'
 gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4-hack'
 gem 'simple_form', '~> 3.0.0.rc'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'cancan'
 
 group :doc do
   gem 'sdoc', require: false
