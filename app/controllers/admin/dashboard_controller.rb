@@ -1,6 +1,5 @@
-class Admin::DashboardController < ApplicationController
-  before_action :verify_admin
-
+class Admin::DashboardController < Admin::BaseController
   def index
+    @dashboard = DashboardService.get_stats
   end
 end

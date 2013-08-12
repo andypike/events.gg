@@ -6,10 +6,6 @@ class ApplicationController < ActionController::Base
   end
 
   private
-    def verify_admin
-      raise CanCan::AccessDenied unless current_user.try(:admin?)
-    end
-
     def current_user
       @current_user ||= SecurityService.current_user(session)
     end 

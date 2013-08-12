@@ -11,6 +11,10 @@ module HelperMethods
       end
     end
   end
+
+  def permission_denied_message
+    "You do not have permission to access that page"
+  end
 end
 
 module Selectors
@@ -19,5 +23,10 @@ module Selectors
   end
 end
 
+module RouteHelpers
+  include Rails.application.routes.url_helpers
+end
+
 RSpec.configuration.include HelperMethods, type: :feature
 RSpec.configuration.include Selectors, type: :feature
+RSpec.configuration.extend RouteHelpers, type: :feature

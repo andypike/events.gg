@@ -45,6 +45,6 @@ describe "A member can edit their settings" do
 
     visit settings_path
 
-    page.should have_content "You do not have permission to access that page"
+    page.should have_content permission_denied_message
   end
 end

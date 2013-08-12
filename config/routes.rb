@@ -6,10 +6,12 @@ Events::Application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: :logout
   get 'settings', to: 'users#edit', as: :settings
 
-  namespace :admin do
-    get '', to: 'dashboard#index', as: '/'
-  end
-
   resources :users
   resources :sessions
+
+  namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
+    
+    resources :users
+  end
 end

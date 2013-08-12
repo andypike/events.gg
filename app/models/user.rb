@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
   validates :email,     uniqueness: {case_sensitive: false},
                         presence: true, 
                         email_format: true
-  validates :role,      :presence => true, 
-                        :inclusion => { :in => ROLES }
+  validates :role,      presence: true, 
+                        inclusion: { in: ROLES }
 
   ROLES.each do |r|
     define_method "#{r}?" do

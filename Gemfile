@@ -16,6 +16,7 @@ gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4-hack'
 gem 'simple_form', '~> 3.0.0.rc'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
+gem 'awesome_print'
 
 group :doc do
   gem 'sdoc', require: false

@@ -1,0 +1,17 @@
+#admin_dashboard {
+  .stat {
+    width: 200px;
+    padding: 20px;
+    background: #ccc;
+    text-align: center;
+    float: left;
+    margin-right: 10px;
+
+    @include border-radius(10px);
+
+    a {
+      color: black;
+      font-weight: bold;
+    }
+  }
+}

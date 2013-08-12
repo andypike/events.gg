@@ -1,8 +1,10 @@
 - content_for :title do 
   Admin Dashboard
 
-#signup
+#admin_dashboard
   .row
     .large-12.columns
 
       %h1 Admin Dashboard
+
+      .stat= link_to pluralize(@dashboard.user_count, "User"), admin_users_path, class: "users"

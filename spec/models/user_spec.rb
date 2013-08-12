@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-  context "validating" do
+  context "validates" do
     let(:existing_user) { User.new(name: 'Andy', password: 'whatever', password_confirmation: 'whatever', email: 'a@b.com', time_zone: "London").save!(validate: false) }
 
     it { should validate_presence_of(:name) }
