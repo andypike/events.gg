@@ -14,5 +14,8 @@ describe User do
       existing_user
       should validate_uniqueness_of(:email).case_insensitive 
     }
+    it { should allow_value("normal").for(:role) }
+    it { should allow_value("admin").for(:role) }
+    it { should_not allow_value("god").for(:role) }
   end
 end

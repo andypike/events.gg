@@ -7,5 +7,10 @@ FactoryGirl.define do
     password "secret"
     password_confirmation "secret"
     time_zone "London"
+    role "normal"
+
+    factory :admin do
+      role "admin"
+    end
   end
 end

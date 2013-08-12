@@ -45,6 +45,6 @@ describe "A member can edit their settings" do
 
     visit settings_path
 
-    page.should have_content "You need to be logged in before you can access that page"
+    page.should have_content "You do not have permission to access that page"
   end
 end
