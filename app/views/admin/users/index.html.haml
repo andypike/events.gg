@@ -12,6 +12,7 @@
           %tr
             %th Name
             %th Email
+            %th Role
             %th Joined
             %td
         %tbody
@@ -19,5 +20,6 @@
             %tr
               %td= user.name
               %td= user.email
+              %td= user.role.titleize
               %td= "#{time_ago_in_words(user.created_at)} ago"
               %td= link_to "Edit", edit_admin_user_path(user)
