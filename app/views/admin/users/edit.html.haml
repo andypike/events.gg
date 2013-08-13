@@ -1,0 +1,21 @@
+- content_for :title do 
+  Editing 
+  = @user.name
+
+#user_form
+  .row
+    .large-12.columns
+
+      %h1 
+        Editing
+        = @user.name
+      
+      = simple_form_for [:admin, @user] do |f|
+        = f.input :name
+        = f.input :email
+        = f.input :password
+        = f.input :password_confirmation
+        = f.input :time_zone, include_blank: false
+        = f.input :role, :collection => User::ROLES.map {|c| [c.titleize, c] }, :include_blank => false
+
+        = f.submit "Save changes", class: "button"

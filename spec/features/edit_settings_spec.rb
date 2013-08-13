@@ -15,7 +15,7 @@ describe "A member can edit their settings" do
   end
 
   it "shows the settings form" do
-    page.should have_field('Name')
+    page.should have_field('Name', with: "Andy Pike")
     page.should have_field('Email')
     page.should have_field('Password')
     page.should have_field('Password confirmation')

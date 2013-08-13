@@ -5,4 +5,19 @@
   .row
     .large-12.columns
     
-      %h1 1 User
+      %h1= pluralize(@users.size, "User")
+
+      %table
+        %thead
+          %tr
+            %th Name
+            %th Email
+            %th Joined
+            %td
+        %tbody
+          - @users.each do |user|
+            %tr
+              %td= user.name
+              %td= user.email
+              %td= "#{time_ago_in_words(user.created_at)} ago"
+              %td= link_to "Edit", edit_admin_user_path(user)
