@@ -14,7 +14,7 @@ describe "Edit a registered user" do
       click_on "Edit"
     end
 
-    it "shows the users list page" do
+    it "shows the edit user page" do
       page.should have_content "Editing Andy Pike"
     end 
 

@@ -15,6 +15,10 @@ module HelperMethods
   def permission_denied_message
     "You do not have permission to access that page"
   end
+
+  def refresh_page
+    visit current_path
+  end
 end
 
 module Selectors

@@ -8,3 +8,4 @@
       %h1 Admin Dashboard
 
       .stat= link_to pluralize(@dashboard.user_count, "User"), admin_users_path, class: "users"
+      .stat= link_to pluralize(@dashboard.game_count, "Game"), admin_games_path, class: "games"

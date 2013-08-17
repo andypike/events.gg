@@ -29,6 +29,13 @@ describe "Show the admin dashboard" do
     it "shows the current number of users" do
       page.should have_content "1 User"
     end
+
+    it "shows the current number of games" do
+      create :game
+      refresh_page
+
+      page.should have_content "1 Game"
+    end    
   end
 
   context "hide the admin menu for" do
