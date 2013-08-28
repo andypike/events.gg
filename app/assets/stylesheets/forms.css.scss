@@ -2,4 +2,21 @@ form {
   abbr {
     border: none;
   }
+
+  label.checkbox {
+    input {
+      margin: 0 1em 1em 0;
+    }
+  }
+
+  label.check_boxes {
+    font-size: 1.8em;
+    line-height: 1.8em;
+    font-weight: 100;
+    margin: 1em 0 0.8em 0;
+  }
+
+  .actions {
+    padding: 2em 0;
+  }
 }

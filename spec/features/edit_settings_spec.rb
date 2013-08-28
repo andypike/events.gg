@@ -47,4 +47,18 @@ describe "A member can edit their settings" do
 
     page.should have_content permission_denied_message
   end
+
+  it "allows a user to follow games they are interested" do
+    create(:game, name: "StarCraft 2")
+    visit settings_path
+
+    check "StarCraft 2"
+    click_on "Save changes"
+
+    page.should have_content "Your settings were successfully updated"
+
+    visit settings_path
+
+    page.has_checked_field?("StarCraft 2").should be_true
+  end
 end

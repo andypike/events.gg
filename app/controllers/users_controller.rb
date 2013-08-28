@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :time_zone)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :time_zone, game_ids: [])
     end
 
     def prep_for_edit

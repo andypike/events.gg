@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
-  ROLES = %w{normal admin}
-
+  has_many :followers
+  has_many :games, through: :followers
   has_secure_password
+
+  ROLES = %w{normal admin}
 
   validates :name,      presence: true
   validates :time_zone, presence: true

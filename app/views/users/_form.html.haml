@@ -5,4 +5,7 @@
   = f.input :password_confirmation
   = f.input :time_zone, include_blank: false
 
-  = f.submit submit_text, class: "button"
+  = f.association :games, label: "What games would you like to follow?", as: :check_boxes, collection: Game.order('name ASC')
+
+  .actions
+    = f.submit submit_text, class: "button"
