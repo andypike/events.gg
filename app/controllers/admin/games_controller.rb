@@ -1,6 +1,6 @@
 class Admin::GamesController < Admin::BaseController
   def index
-    @games = Game.order("created_at DESC")
+    @games = AllGamesQuery.new.query.decorate
   end
 
   def new

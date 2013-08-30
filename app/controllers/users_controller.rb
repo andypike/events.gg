@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    @games = games
     @user = User.default
   end
 
@@ -33,7 +34,12 @@ class UsersController < ApplicationController
     end
 
     def prep_for_edit
+      @games = games
       @user = current_user
       authorize! :edit, @user
+    end
+
+    def games
+      AllGamesQuery.new.query
     end
 end

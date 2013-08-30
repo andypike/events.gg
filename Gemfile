@@ -17,6 +17,7 @@ gem 'simple_form', '~> 3.0.0.rc'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
 gem 'awesome_print'
+gem 'draper', '~> 1.0'
 
 group :doc do
   gem 'sdoc', require: false
@@ -33,6 +34,7 @@ group :test, :development do
   gem 'letter_opener'
   gem 'awesome_print'
   gem 'capybara-webkit'
+  gem 'simplecov', :require => false
 end
 
 group :development do
