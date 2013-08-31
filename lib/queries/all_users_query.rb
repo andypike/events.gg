@@ -1,4 +1,4 @@
-class AllUsersQuery < QueryBase
+class AllUsersQuery < Queryable
   def initialize(relation = User.all)
     @relation = relation
   end

@@ -40,6 +40,6 @@ class UsersController < ApplicationController
     end
 
     def games
-      AllGamesQuery.new.query
+      AllGamesQuery.new
     end
 end

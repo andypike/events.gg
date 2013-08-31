@@ -1,6 +1,6 @@
 class Admin::GamesController < Admin::BaseController
   def index
-    @games = AllGamesQuery.new.query.decorate
+    @games = AllGamesQuery.new.decorated
   end
 
   def new

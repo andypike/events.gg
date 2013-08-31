@@ -1,4 +1,4 @@
-class GameFollowersQuery < QueryBase
+class GameFollowersQuery < Queryable
   def initialize(game, relation = Follower.all)
     @game = game
     @relation = relation

@@ -1,6 +1,6 @@
 class Admin::UsersController < Admin::BaseController
   def index
-    @users = AllUsersQuery.new.query
+    @users = AllUsersQuery.new
   end
 
   def edit
