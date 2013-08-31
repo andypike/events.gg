@@ -3,7 +3,7 @@ class QueryBase
     query.count
   end
 
-  def find_each(&block)
-    query.find_each(&block)
-  end
+  # def find_each(&block)
+  #   query.find_each(&block)
+  # end
 end
