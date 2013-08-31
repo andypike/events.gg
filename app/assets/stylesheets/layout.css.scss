@@ -5,6 +5,17 @@ body {
 
   nav.top-bar {
     margin: 0;
+
+    .top-bar-section .dropdown li {
+      a {
+        padding: 15px 20px;
+        background: #293859;
+
+        &:hover {
+          background: #192869;        
+        }
+      }
+    }
   }
 
   .notice {

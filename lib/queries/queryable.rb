@@ -3,6 +3,10 @@ class Queryable
     query.count
   end
 
+  def empty?
+    count == 0
+  end
+
   def each(&block)
     query.find_each(&block)
   end

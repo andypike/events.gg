@@ -1,17 +1,18 @@
 require 'spec_helper'
 
 describe "A member can edit their settings" do
+  let(:current_user) { create :user, name: "Andy Pike" }
+
   before do
-    @current_user = create :user, name: "Andy Pike"
-    login_as @current_user
+    login_as current_user
 
     within main_menu do
-      click_on "Andy Pike"
+      click_on "Settings"
     end
   end
 
   it "shows the settings page" do
-    page.should have_content "Your settings"
+    page.should have_content "Your Settings"
   end
 
   it "shows the settings form" do

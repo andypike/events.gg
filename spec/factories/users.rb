@@ -3,7 +3,9 @@
 FactoryGirl.define do
   factory :user do
     name "Joe Bloggs"
-    email "joe@bloggs.com"
+    sequence :email do |n|
+      "email#{n}@factory.com"
+    end
     password "secret"
     password_confirmation "secret"
     time_zone "London"

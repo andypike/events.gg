@@ -1,0 +1,26 @@
+- content_for :title do 
+  Your Organisations
+
+#organisations
+  .row
+    .large-12.columns
+
+      %h1 Your Organisations
+
+      = link_to "Create an Organisation", new_organisation_path, class: "button"
+
+      - if @invitations.empty?
+        %p You are not part of an organisation at the moment
+      - else
+        %table
+          %thead
+            %tr
+              %th Name
+              %th Role
+              %th Status
+          %tbody
+            - @invitations.each do |invitation|
+              %tr
+                %td= invitation.organisation.name
+                %td= invitation.role.titleize
+                %td= invitation.status.titleize

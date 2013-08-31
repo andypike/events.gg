@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :followers
+  has_many :invitations
   has_many :games, through: :followers
+  has_many :organisations, through: :invitations
+
   has_secure_password
 
   ROLES = %w{normal admin}

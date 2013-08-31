@@ -8,6 +8,7 @@ Events::Application.routes.draw do
 
   resources :users
   resources :sessions
+  resources :organisations
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'

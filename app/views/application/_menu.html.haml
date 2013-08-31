@@ -27,5 +27,9 @@
 
     - if current_user
       %ul.right
-        %li
-        %li= link_to current_user.name, settings_path
+        %li.has-dropdown
+          = link_to current_user.name, "#"
+
+          %ul.dropdown
+            %li= link_to "Settings", settings_path
+            %li= link_to "Organisations", organisations_path
