@@ -15,12 +15,16 @@
         %table
           %thead
             %tr
+              %th 
               %th Name
-              %th Role
               %th Status
+              %th Role
+              %th Invitation
           %tbody
             - @invitations.each do |invitation|
               %tr
+                %td= image_tag invitation.organisation.logo.url
                 %td= invitation.organisation.name
+                %td= invitation.organisation.status.titleize
                 %td= invitation.role.titleize
                 %td= invitation.status.titleize

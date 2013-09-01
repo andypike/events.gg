@@ -24,5 +24,13 @@ describe "A member can create a new organisation" do
     click_on "Create organisation"
 
     page.should have_content "You have successfully created an organisation."
+    current_path.should == organisations_path
+  end
+
+  it "shows errors if invalid information is entered" do
+    fill_in 'Name', with: ''
+    click_on "Create organisation"
+
+    page.should have_content "can't be blank"
   end
 end

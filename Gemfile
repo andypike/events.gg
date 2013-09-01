@@ -18,6 +18,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
 gem 'awesome_print'
 gem 'draper', '~> 1.0'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :doc do
   gem 'sdoc', require: false

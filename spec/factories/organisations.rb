@@ -3,5 +3,6 @@
 FactoryGirl.define do
   factory :organisation do
     name "MLG"
+    status "approved"
   end
 end

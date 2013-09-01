@@ -34,9 +34,9 @@ class UsersController < ApplicationController
     end
 
     def prep_for_edit
+      authorize! :edit, current_user
       @games = games
-      @user = current_user
-      authorize! :edit, @user
+      @user = User.find(current_user.id)  # Load a new user instance incase of invalid data so current user is unaffected
     end
 
     def games

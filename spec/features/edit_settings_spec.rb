@@ -41,6 +41,15 @@ describe "A member can edit their settings" do
     page.should have_content "can't be blank"
   end
 
+  it "keeps user name in menu if the user tries to save a blank name" do
+    fill_in 'Name', with: ''
+    click_on "Save changes"
+
+    within main_menu do
+      page.should have_content "Andy Pike"
+    end
+  end  
+
   it "shows an error message if a non-logged in user tries to access the settings page" do
     click_on "Logout"
 

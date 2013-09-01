@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :invitation do
     user_id 1
     organisation_id 1
-    status "invited"
+    status "pending"
     role "member"
   end
 end

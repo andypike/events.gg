@@ -1,5 +1,6 @@
 = simple_form_for @organisation do |f|
   = f.input :name
+  = f.input :logo, :hint => "The logo should be 120px x 120px. Logos will be resized to fit if required."
 
   .actions
     = f.submit submit_text, class: "button"
