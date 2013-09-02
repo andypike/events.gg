@@ -1,0 +1,23 @@
+- content_for :title do 
+  Organisations
+
+#organisations
+  .row
+    .large-12.columns
+
+      %h1= pluralize(@organisations.count, "Organisations")
+
+      = link_to "Add a new organisation", new_admin_organisation_path, class: "button"
+
+      %table
+        %thead
+          %tr
+            %th Name
+            %th Status
+            %th
+        %tbody
+          - @organisations.each do |organisation|
+            %tr
+              %td= organisation.name
+              %td= organisation.status.titleize
+              %td= link_to "Edit", edit_admin_organisation_path(organisation)

@@ -33,4 +33,12 @@ describe "A member can see a list of organisations that they are part of" do
     page.should_not have_content "Dreamhack"
     page.should_not have_content no_organisation_message
   end
+
+  it "shows an error message if a non-logged in user tries to view the organisations list" do
+    click_on "Logout"
+
+    visit organisations_path
+
+    page.should have_content permission_denied_message
+  end
 end

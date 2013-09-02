@@ -1,4 +1,4 @@
-class OrganisationsController < ApplicationController
+class OrganisationsController < LoggedInUserRequiredController
   def index
     @invitations = InvitationsForUserQuery.new(current_user)
   end

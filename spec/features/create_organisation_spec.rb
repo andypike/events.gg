@@ -33,4 +33,12 @@ describe "A member can create a new organisation" do
 
     page.should have_content "can't be blank"
   end
+
+  it "shows an error message if a non-logged in user tries to create an organisation" do
+    click_on "Logout"
+
+    visit new_organisation_path
+
+    page.should have_content permission_denied_message
+  end
 end

@@ -1,0 +1,14 @@
+- content_for :title do 
+  Editing
+  = @organisation.name
+
+#organisation_form
+  .row
+    .large-12.columns
+
+      %h1 
+        = image_tag @organisation.logo.url
+        Editing
+        = @organisation.name
+      
+      = render 'form'

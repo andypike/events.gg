@@ -5,7 +5,7 @@
   .row
     .large-12.columns
 
-      %h1= pluralize(@games.size, "Game")
+      %h1= pluralize(@games.count, "Game")
 
       = link_to "Add a new game", new_admin_game_path, class: "button"
 

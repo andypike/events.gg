@@ -19,3 +19,4 @@
         = f.input :role, :collection => User::ROLES.map {|c| [c.titleize, c] }, :include_blank => false
 
         = f.submit "Save changes", class: "button"
+        = link_to "Cancel", admin_users_path, class: "button"

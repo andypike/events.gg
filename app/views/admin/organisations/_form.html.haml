@@ -1,0 +1,7 @@
+= simple_form_for [:admin, @organisation] do |f|
+  = f.input :name
+  = f.input :logo
+  = f.input :status, :collection => Organisation::STATUSES.map {|c| [c.titleize, c] }, :include_blank => false
+
+  = f.submit "Save changes", class: "button"
+  = link_to "Cancel", admin_organisations_path, class: "button"

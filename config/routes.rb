@@ -15,5 +15,6 @@ Events::Application.routes.draw do
     
     resources :users
     resources :games
+    resources :organisations
   end
 end

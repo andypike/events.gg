@@ -10,8 +10,4 @@
         Editing
         = @game.name
       
-      = simple_form_for [:admin, @game] do |f|
-        = f.input :name
-        = f.input :status, :collection => Game::STATUSES.map {|c| [c.titleize, c] }, :include_blank => false
-
-        = f.submit "Save changes", class: "button"
+      = render 'form'
