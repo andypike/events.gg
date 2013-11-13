@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe "Add a new game" do
   context "admin users have access" do
@@ -16,12 +16,12 @@ describe "Add a new game" do
 
     it "shows the new game page" do
       page.should have_content "Adding a new game"
-    end 
+    end
 
     it "shows the form" do
-      page.should have_field('Name')
-      page.should have_select('Status')
-      page.should have_button('Save changes')
+      page.should have_field("Name")
+      page.should have_select("Status")
+      page.should have_button("Save changes")
     end
 
     it "creates the game if valid data is entered" do
@@ -35,7 +35,7 @@ describe "Add a new game" do
     end
 
     it "shows errors if invalid information is entered" do
-      fill_in 'Name', with: ''
+      fill_in "Name", with: ""
       click_on "Save changes"
 
       page.should have_content "can't be blank"

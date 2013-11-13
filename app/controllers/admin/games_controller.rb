@@ -31,7 +31,8 @@ class Admin::GamesController < Admin::BaseController
     end
   end
 
-  private 
+  private
+
     def game_params
       params.require(:game).permit(:name, :status)
     end

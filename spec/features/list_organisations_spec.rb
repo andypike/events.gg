@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe "A member can see a list of organisations that they are part of" do
   let(:no_organisation_message) { "You are not part of an organisation at the moment" }
@@ -24,8 +24,8 @@ describe "A member can see a list of organisations that they are part of" do
     other_user = create(:user)
     dreamhack = create(:organisation, name: "Dreamhack")
     mlg = create(:organisation, name: "MLG")
-    invitation = create(:invitation, user: current_user, organisation: mlg)
-    invitation = create(:invitation, user: other_user, organisation: dreamhack)
+    create(:invitation, user: current_user, organisation: mlg)
+    create(:invitation, user: other_user, organisation: dreamhack)
 
     refresh_page
 

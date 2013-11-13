@@ -1,8 +1,8 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe "Access control to admin pages" do
   admin_routes = [
-    admin_path, 
+    admin_path,
     admin_users_path, edit_admin_user_path(1),
     admin_games_path,
     admin_organisations_path, edit_admin_organisation_path(1), new_admin_organisation_path

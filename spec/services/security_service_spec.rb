@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe SecurityService do
   context ".login" do
@@ -27,7 +27,7 @@ describe SecurityService do
 
     it "finds a matching user based on id" do
       current_user = stub
-      session = {"user_id" => 1}
+      session = { "user_id" => 1 }
 
       User.stub(:where) { [current_user] }
       user = SecurityService.current_user(session)
@@ -35,7 +35,7 @@ describe SecurityService do
     end
 
     it "retruns nil if no matching users found" do
-      session = {"user_id" => 1}
+      session = { "user_id" => 1 }
 
       User.stub(:where) { [] }
       user = SecurityService.current_user(session)
@@ -44,7 +44,7 @@ describe SecurityService do
   end
 
   context ".authenticate" do
-    let(:session_params) { {email: "a@b.com", password: "secret"} }
+    let(:session_params) { { email: "a@b.com", password: "secret" } }
     let(:current_user) { stub.as_null_object }
     let(:session) { stub.as_null_object }
 

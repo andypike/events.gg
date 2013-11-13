@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe "A member can create a new organisation" do
   let(:current_user) { create :user }
@@ -14,13 +14,13 @@ describe "A member can create a new organisation" do
   end
 
   it "shows the new organisation form" do
-    page.should have_field('Name')
-    page.should have_button('Create organisation')
+    page.should have_field("Name")
+    page.should have_button("Create organisation")
   end
 
   it "creates an organisation if valid information is entered" do
     fill_in "Name", with: "MLG"
-    
+
     click_on "Create organisation"
 
     page.should have_content "You have successfully created an organisation."
@@ -28,7 +28,7 @@ describe "A member can create a new organisation" do
   end
 
   it "shows errors if invalid information is entered" do
-    fill_in 'Name', with: ''
+    fill_in "Name", with: ""
     click_on "Create organisation"
 
     page.should have_content "can't be blank"

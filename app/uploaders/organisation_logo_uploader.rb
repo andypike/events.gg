@@ -5,22 +5,22 @@ class OrganisationLogoUploader < CarrierWave::Uploader::Base
 
   def extension_white_list
     %w(jpg jpeg gif png)
-  end  
+  end
 
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   def default_url
-    #ActionController::Base.helpers.asset_path [version_name, "no_org_logo.png"].compact.join('_')
-    "/assets/" + [version_name, "no_org_logo.png"].compact.join('_')
+    # ActionController::Base.helpers.asset_path [version_name, "no_org_logo.png"].compact.join('_')
+    "/assets/" + [version_name, "no_org_logo.png"].compact.join("_")
   end
 
   storage :file
 
-  process :resize_to_fill => [120, 120]
+  process resize_to_fill: [120, 120]
 
   version :thumb do
-    process :resize_to_fill => [85, 85]
+    process resize_to_fill: [85, 85]
   end
 end

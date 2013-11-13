@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe "Edit a game" do
   context "admin users have access" do
@@ -17,12 +17,12 @@ describe "Edit a game" do
 
     it "shows the edit game page" do
       page.should have_content "Editing StarCraft 2"
-    end 
+    end
 
     it "shows a populated form" do
-      page.should have_field('Name', with: "StarCraft 2")
-      page.should have_select('Status', selected: "Active")
-      page.should have_button('Save changes')
+      page.should have_field("Name", with: "StarCraft 2")
+      page.should have_select("Status", selected: "Active")
+      page.should have_button("Save changes")
     end
 
     it "updates the game if valid data is entered" do
@@ -36,7 +36,7 @@ describe "Edit a game" do
     end
 
     it "shows errors if invalid information is entered" do
-      fill_in 'Name', with: ''
+      fill_in "Name", with: ""
       click_on "Save changes"
 
       page.should have_content "can't be blank"

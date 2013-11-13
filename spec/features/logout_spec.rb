@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe "A member can logout" do
   before do
@@ -22,7 +22,7 @@ describe "A member can logout" do
 
   it "show logout message and clear session" do
     user = create :user
-    login_as user    
+    login_as user
 
     within main_menu do
       click_on "Logout"

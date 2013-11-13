@@ -1,9 +1,9 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe "Edit an organisation" do
   context "admin users have access" do
     before do
-      create :organisation, name: "MLG", status: 'approved'
+      create :organisation, name: "MLG", status: "approved"
       admin = create :admin
       login_as admin
 
@@ -17,12 +17,12 @@ describe "Edit an organisation" do
 
     it "shows the edit organisation page" do
       page.should have_content "Editing MLG"
-    end 
+    end
 
     it "shows a populated form" do
-      page.should have_field('Name', with: "MLG")
-      page.should have_select('Status', selected: "Approved")
-      page.should have_button('Save changes')
+      page.should have_field("Name", with: "MLG")
+      page.should have_select("Status", selected: "Approved")
+      page.should have_button("Save changes")
     end
 
     it "updates the organisation if valid data is entered" do
@@ -36,7 +36,7 @@ describe "Edit an organisation" do
     end
 
     it "shows errors if invalid information is entered" do
-      fill_in 'Name', with: ''
+      fill_in "Name", with: ""
       click_on "Save changes"
 
       page.should have_content "can't be blank"

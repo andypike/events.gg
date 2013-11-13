@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe "Edit a registered user" do
   context "admin users have access" do
@@ -16,16 +16,16 @@ describe "Edit a registered user" do
 
     it "shows the edit user page" do
       page.should have_content "Editing Andy Pike"
-    end 
+    end
 
     it "shows a populated form" do
-      page.should have_field('Name', with: "Andy Pike")
-      page.should have_field('Email', with: "a@b.com")
-      page.should have_field('Password')
-      page.should have_field('Password confirmation')
-      page.should have_select('Time zone')
-      page.should have_select('Role', selected: "Admin")
-      page.should have_button('Save changes')
+      page.should have_field("Name", with: "Andy Pike")
+      page.should have_field("Email", with: "a@b.com")
+      page.should have_field("Password")
+      page.should have_field("Password confirmation")
+      page.should have_select("Time zone")
+      page.should have_select("Role", selected: "Admin")
+      page.should have_button("Save changes")
     end
 
     it "updates the user if valid data is entered" do
@@ -39,7 +39,7 @@ describe "Edit a registered user" do
     end
 
     it "shows errors if invalid information is entered" do
-      fill_in 'Name', with: ''
+      fill_in "Name", with: ""
       click_on "Save changes"
 
       page.should have_content "can't be blank"

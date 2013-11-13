@@ -4,7 +4,7 @@ class OrganisationCreationService
     organisation.status = "pending_approval"
 
     if organisation.save
-      Invitation.create(organisation: organisation, user: user, role: 'manager', status: 'accepted')
+      Invitation.create(organisation: organisation, user: user, role: "manager", status: "accepted")
     end
 
     organisation

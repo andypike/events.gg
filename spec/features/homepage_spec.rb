@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe "Displaying the homepage" do
   it "shows a welcome message" do

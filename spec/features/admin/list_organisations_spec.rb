@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe "Show a list of organisations" do
   context "admin users have access" do
@@ -16,7 +16,7 @@ describe "Show a list of organisations" do
 
     it "shows the organisations list page" do
       page.should have_css("h1", text: "1 Organisation")
-    end 
+    end
 
     it "lists the current organisations" do
       page.should have_css("table tbody td", text: "MLG")

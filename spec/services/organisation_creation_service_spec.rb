@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe OrganisationCreationService do
   context ".create" do
@@ -19,17 +19,25 @@ describe OrganisationCreationService do
       end
 
       it "sets the organisation status to pending approval" do
-        organisation.should_receive(:status=).with('pending_approval')
+        organisation.should_receive(:status=).with("pending_approval")
         OrganisationCreationService.create(organisation_params, user)
       end
 
       it "joins the user and the organisation" do
-        Invitation.should_receive(:create).with(organisation: organisation, user: user, role: 'manager', status: 'accepted') { invitation }
+        Invitation
+          .should_receive(:create)
+          .with(
+            organisation: organisation,
+            user: user,
+            role: "manager",
+            status: "accepted"
+          ) { invitation }
+
         OrganisationCreationService.create(organisation_params, user)
       end
     end
 
-    context "saving unsuccessful" do 
+    context "saving unsuccessful" do
       before do
         Organisation.stub(:new) { organisation }
         organisation.stub(:save) { false }

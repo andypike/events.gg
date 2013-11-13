@@ -10,6 +10,6 @@ class Organisation < ActiveRecord::Base
   validates :status,  presence: true, inclusion: { in: STATUSES }
 
   def self.default
-    self.new
+    new
   end
 end

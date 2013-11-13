@@ -1,12 +1,12 @@
 class SecurityService
-  LOGIN_SESSION_KEY = 'user_id'
+  LOGIN_SESSION_KEY = "user_id"
 
   def self.authenticate(session_params, session)
     user = User.find_by(email: session_params[:email])
     authenticated = user && user.authenticate(session_params[:password])
 
     if authenticated
-      login(user, session) 
+      login(user, session)
       return user
     end
 
@@ -23,6 +23,6 @@ class SecurityService
 
   def self.current_user(session)
     id = session[LOGIN_SESSION_KEY]
-    User.where(:id => id).first if id
+    User.where(id: id).first if id
   end
 end

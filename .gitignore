@@ -21,3 +21,5 @@ database.yml
 
 # Ignore the spec coverage folder
 coverage
+
+.env

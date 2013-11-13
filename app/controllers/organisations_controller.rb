@@ -18,6 +18,7 @@ class OrganisationsController < LoggedInUserRequiredController
   end
 
   private
+
     def organisation_params
       params.require(:organisation).permit(:name, :logo)
     end

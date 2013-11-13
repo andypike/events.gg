@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe "A visitor to the site can sign up" do
   before do
@@ -14,12 +14,12 @@ describe "A visitor to the site can sign up" do
   end
 
   it "shows the sign up form" do
-    page.should have_field('Name')
-    page.should have_field('Email')
-    page.should have_field('Password')
-    page.should have_field('Password confirmation')
-    page.should have_field('Time zone')
-    page.should have_button('Create account')
+    page.should have_field("Name")
+    page.should have_field("Email")
+    page.should have_field("Password")
+    page.should have_field("Password confirmation")
+    page.should have_field("Time zone")
+    page.should have_button("Create account")
   end
 
   it "creates an account if valid information is entered" do
@@ -27,7 +27,7 @@ describe "A visitor to the site can sign up" do
     fill_in "Email", with: "andy@andypike.com"
     fill_in "Password", with: "secret"
     fill_in "Password confirmation", with: "secret"
-    select "London", :from => "Time zone"
+    select "London", from: "Time zone"
 
     click_on "Create account"
 

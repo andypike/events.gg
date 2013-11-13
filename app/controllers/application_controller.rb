@@ -6,8 +6,9 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
     def current_user
       @current_user ||= SecurityService.current_user(session)
-    end 
+    end
     helper_method :current_user
 end

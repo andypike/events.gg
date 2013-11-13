@@ -32,6 +32,7 @@ class Admin::OrganisationsController < Admin::BaseController
   end
 
   private
+
     def organisation_params
       params.require(:organisation).permit(:name, :status, :logo)
     end

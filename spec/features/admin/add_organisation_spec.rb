@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe "Add a new organisation" do
   context "admin users have access" do
@@ -16,12 +16,12 @@ describe "Add a new organisation" do
 
     it "shows the new organisation page" do
       page.should have_content "Adding a new organisation"
-    end 
+    end
 
     it "shows the form" do
-      page.should have_field('Name')
-      page.should have_select('Status')
-      page.should have_button('Save changes')
+      page.should have_field("Name")
+      page.should have_select("Status")
+      page.should have_button("Save changes")
     end
 
     it "creates the organisation if valid data is entered" do
@@ -35,7 +35,7 @@ describe "Add a new organisation" do
     end
 
     it "shows errors if invalid information is entered" do
-      fill_in 'Name', with: ''
+      fill_in "Name", with: ""
       click_on "Save changes"
 
       page.should have_content "can't be blank"

@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe RegistrationService do
   context ".register" do
@@ -23,12 +23,12 @@ describe RegistrationService do
       end
 
       it "sets the user role to normal" do
-        user.should_receive(:role=).with('normal')
-        RegistrationService.register(user_params, {})   
+        user.should_receive(:role=).with("normal")
+        RegistrationService.register(user_params, {})
       end
     end
 
-    context "saving unsuccessful" do 
+    context "saving unsuccessful" do
       before do
         User.stub(:new) { user }
         user.stub(:save) { false }

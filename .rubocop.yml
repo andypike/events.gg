@@ -1,0 +1,20 @@
+AllCops:
+  Excludes:
+    - 'db/schema.rb'
+    - 'config/deploy.rb'
+  RunRailsCops: true
+
+StringLiterals:
+  EnforcedStyle: double_quotes
+
+# Skips Missing top-level class/module documentation comment rule.
+Documentation:
+  Enabled: false
+
+# The traditional 80 characters is too short IMO but we need some reasonable limit.
+LineLength:
+  Max: 100
+
+# Disabled because I prefer single line conditional blocks if the modifier makes the line too long.
+IfUnlessModifier:
+  Enabled: false

@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe "A member can login" do
   before do
@@ -14,9 +14,9 @@ describe "A member can login" do
   end
 
   it "shows the login form" do
-    page.should have_field('Email')
-    page.should have_field('Password')
-    page.should have_button('Login')
+    page.should have_field("Email")
+    page.should have_field("Password")
+    page.should have_button("Login")
   end
 
   it "logs the member in if valid information is entered" do
@@ -40,7 +40,7 @@ describe "A member can login" do
     create :user, email: "a@b.com", password: "secret", password_confirmation: "secret"
 
     fill_in "Email", with: "a@b.com"
-    fill_in "Password", with: "just_a_guess"    
+    fill_in "Password", with: "just_a_guess"
     click_button "Login"
 
     page.should have_content "Either your email address or password wasn't valid"

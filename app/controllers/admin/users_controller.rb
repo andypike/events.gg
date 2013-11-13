@@ -17,8 +17,11 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
-  private 
+  private
+
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :time_zone, :role)
+      params
+        .require(:user)
+        .permit(:name, :email, :password, :password_confirmation, :time_zone, :role)
     end
 end

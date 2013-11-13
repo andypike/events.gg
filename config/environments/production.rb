@@ -16,7 +16,8 @@ Events::Application.configure do
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
-  # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
+  # For large-scale production use, consider using a caching reverse proxy like nginx,
+  # varnish or squid.
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
@@ -33,7 +34,7 @@ Events::Application.configure do
   config.assets.digest = true
 
   # Version of your assets, change this if you want to expire all your assets.
-  config.assets.version = '1.0'
+  config.assets.version = "1.0"
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
@@ -62,7 +63,7 @@ Events::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Add the fonts path
-  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
   # Precompile additional assets
   config.assets.precompile += %w( .svg .eot .woff .ttf )

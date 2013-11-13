@@ -10,12 +10,12 @@ class User < ActiveRecord::Base
 
   validates :name,      presence: true
   validates :time_zone, presence: true
-  validates :password,  presence: { if: :password_required? }, 
+  validates :password,  presence: { if: :password_required? },
                         length: { minimum: 6, if: :password_required? }
-  validates :email,     uniqueness: {case_sensitive: false},
-                        presence: true, 
+  validates :email,     uniqueness: { case_sensitive: false },
+                        presence: true,
                         email_format: true
-  validates :role,      presence: true, 
+  validates :role,      presence: true,
                         inclusion: { in: ROLES }
 
   ROLES.each do |r|
@@ -25,10 +25,11 @@ class User < ActiveRecord::Base
   end
 
   def self.default
-    self.new time_zone: "UTC"
+    new time_zone: "UTC"
   end
 
-  private 
+  private
+
     def password_required?
       password_digest.blank? || !password.blank?
     end

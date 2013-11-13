@@ -8,7 +8,7 @@ class CreateInvitations < ActiveRecord::Migration
 
       t.timestamps
     end
-    
+
     add_index :invitations, :user_id
     add_index :invitations, :organisation_id
   end

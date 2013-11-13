@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe "Show a list of registered users" do
   context "admin users have access" do
@@ -15,7 +15,7 @@ describe "Show a list of registered users" do
 
     it "shows the users list page" do
       page.should have_css("h1", text: "1 User")
-    end 
+    end
 
     it "lists the current users" do
       page.should have_css("table tbody td", text: "Andy Pike")

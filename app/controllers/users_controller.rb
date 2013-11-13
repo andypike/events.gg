@@ -29,14 +29,17 @@ class UsersController < ApplicationController
   end
 
   private
+
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :time_zone, game_ids: [])
+      params
+        .require(:user)
+        .permit(:name, :email, :password, :password_confirmation, :time_zone, game_ids: [])
     end
 
     def prep_for_edit
       authorize! :edit, current_user
       @games = games
-      @user = User.find(current_user.id)  # Load a new user instance incase of invalid data so current user is unaffected
+      @user = User.find(current_user.id)  # Reload in case of invalid data so user is unaffected
     end
 
     def games
