@@ -6,8 +6,12 @@ class Organisation < ActiveRecord::Base
 
   STATUSES = %w{pending_approval approved rejected}
 
-  validates :name,    presence: true
-  validates :status,  presence: true, inclusion: { in: STATUSES }
+  validates :name,
+    presence: true
+
+  validates :status,
+    presence: true,
+    inclusion: { in: STATUSES }
 
   def self.default
     new

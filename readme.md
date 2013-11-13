@@ -25,6 +25,7 @@ $ psql postgres
   # create user events with password '' CREATEDB;
   # \q
 $ brew install qt
+$ brew install imagemagick
 $ bundle
 $ rake db:create db:migrate
 $ bundle exec rails s

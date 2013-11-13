@@ -5,10 +5,19 @@ class Invitation < ActiveRecord::Base
   ROLES = %w{member manager}
   STATUSES = %w{pending accepted rejected}
 
-  validates :user_id,         presence: true
-  validates :organisation_id, presence: true
-  validates :role,            presence: true, inclusion: { in: ROLES }
-  validates :status,          presence: true, inclusion: { in: STATUSES }
+  validates :user_id,
+    presence: true
+
+  validates :organisation_id,
+    presence: true
+
+  validates :role,
+    presence: true,
+    inclusion: { in: ROLES }
+
+  validates :status,
+    presence: true,
+    inclusion: { in: STATUSES }
 
   ROLES.each do |r|
     define_method "#{r}?" do
