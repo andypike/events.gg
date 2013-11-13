@@ -12,6 +12,8 @@ A word on the code for this project
 I'm using this project as a way to experiment with a few things:
 
 * [7 Patterns to Refactor Fat ActiveRecord Models](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/)
+* [Hexagonal Rails](http://www.youtube.com/watch?v=CGN4RFkhH2M) - coming soon
+* [Improved TDD](http://vimeo.com/68375232) - coming soon
 * [Rubocop](https://github.com/bbatsov/rubocop)
 
 Setup
