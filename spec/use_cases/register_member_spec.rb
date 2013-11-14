@@ -1,42 +1,42 @@
 require "spec_helper"
 
 describe RegisterMember do
-  context ".register" do
-    let(:user_params) { double.as_null_object }
-    let(:user) { double.as_null_object }
+  let(:listener) { double.as_null_object }
+  let(:params) { attributes_for(:user) }
+  let(:session_store) { double }
 
-    context "saving successful" do
-      before do
-        User.stub(:new) { user }
-        user.stub(:save) { true }
-        SecurityService.stub(:login)
-      end
+  describe "#register" do
+    before do
+      SecurityService.stub(:login)
+      subject.subscribe(listener)
+      subject.register
+    end
 
-      it "creates and saves a new user and returns it" do
-        user.should_receive(:save)
-        described_class.register(user_params, {}).should == user
+    context "with valid attributes" do
+      subject { RegisterMember.new(params, session_store) }
+
+      it "creates the user as a normal member" do
+        User.first.normal?.should be_true
       end
 
       it "logs the user in" do
-        SecurityService.should_receive(:login)
-        described_class.register(user_params, {})
+        expect(SecurityService).to have_received(:login)
       end
 
-      it "sets the user role to normal" do
-        user.should_receive(:role=).with("normal")
-        described_class.register(user_params, {})
+      it "publishes a success event" do
+        expect(listener).to have_received(:success)
       end
     end
 
-    context "saving unsuccessful" do
-      before do
-        User.stub(:new) { user }
-        user.stub(:save) { false }
+    context "with invalid attributes" do
+      subject { RegisterMember.new(params.except(:name), session_store) }
+
+      it "does not create the user" do
+        User.count.should == 0
       end
 
       it "doesn't logs the user in" do
-        SecurityService.should_not_receive(:login)
-        described_class.register(user_params, {})
+        expect(SecurityService).to_not have_received(:login)
       end
     end
   end

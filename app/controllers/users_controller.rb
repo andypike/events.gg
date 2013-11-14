@@ -5,13 +5,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = RegisterMember.register(user_params, session)
+    register_member = RegisterMember.new(params[:user], session)
 
-    if @user.valid?
+    register_member.on(:success) do
       redirect_to root_url, notice: "You have successfully created an account."
-    else
+    end
+
+    register_member.on(:failure) do |user|
+      @user = user
       render :new
     end
+
+    register_member.register
   end
 
   def edit
