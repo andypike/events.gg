@@ -5,9 +5,9 @@ class Game < ActiveRecord::Base
   STATUSES = %w{active suggestion}
 
   validates :name,
-    presence: true
+            presence: true
 
   validates :status,
-    presence: true,
-    inclusion: { in: STATUSES }
+            presence: true,
+            inclusion: { in: STATUSES }
 end

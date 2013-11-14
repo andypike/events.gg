@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = RegistrationService.register(user_params, session)
+    @user = RegisterMember.register(user_params, session)
 
     if @user.valid?
       redirect_to root_url, notice: "You have successfully created an account."

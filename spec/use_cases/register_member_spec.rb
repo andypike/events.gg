@@ -1,9 +1,9 @@
 require "spec_helper"
 
-describe RegistrationService do
+describe RegisterMember do
   context ".register" do
-    let(:user_params) { stub.as_null_object }
-    let(:user) { stub.as_null_object }
+    let(:user_params) { double.as_null_object }
+    let(:user) { double.as_null_object }
 
     context "saving successful" do
       before do
@@ -14,17 +14,17 @@ describe RegistrationService do
 
       it "creates and saves a new user and returns it" do
         user.should_receive(:save)
-        RegistrationService.register(user_params, {}).should == user
+        described_class.register(user_params, {}).should == user
       end
 
       it "logs the user in" do
         SecurityService.should_receive(:login)
-        RegistrationService.register(user_params, {})
+        described_class.register(user_params, {})
       end
 
       it "sets the user role to normal" do
         user.should_receive(:role=).with("normal")
-        RegistrationService.register(user_params, {})
+        described_class.register(user_params, {})
       end
     end
 
@@ -36,7 +36,7 @@ describe RegistrationService do
 
       it "doesn't logs the user in" do
         SecurityService.should_not_receive(:login)
-        RegistrationService.register(user_params, {})
+        described_class.register(user_params, {})
       end
     end
   end

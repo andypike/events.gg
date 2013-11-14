@@ -7,11 +7,17 @@ class Organisation < ActiveRecord::Base
   STATUSES = %w{pending_approval approved rejected}
 
   validates :name,
-    presence: true
+            presence: true
 
   validates :status,
-    presence: true,
-    inclusion: { in: STATUSES }
+            presence: true,
+            inclusion: { in: STATUSES }
+
+  STATUSES.each do |s|
+    define_method "#{s}?" do
+      status == s
+    end
+  end
 
   def self.default
     new

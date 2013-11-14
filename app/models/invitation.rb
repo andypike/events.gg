@@ -6,18 +6,18 @@ class Invitation < ActiveRecord::Base
   STATUSES = %w{pending accepted rejected}
 
   validates :user_id,
-    presence: true
+            presence: true
 
   validates :organisation_id,
-    presence: true
+            presence: true
 
   validates :role,
-    presence: true,
-    inclusion: { in: ROLES }
+            presence: true,
+            inclusion: { in: ROLES }
 
   validates :status,
-    presence: true,
-    inclusion: { in: STATUSES }
+            presence: true,
+            inclusion: { in: STATUSES }
 
   ROLES.each do |r|
     define_method "#{r}?" do

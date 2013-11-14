@@ -9,23 +9,23 @@ class User < ActiveRecord::Base
   ROLES = %w{normal admin}
 
   validates :name,
-    presence: true
+            presence: true
 
   validates :time_zone,
-    presence: true
+            presence: true
 
   validates :password,
-    presence: { if: :password_required? },
-    length: { minimum: 6, if: :password_required? }
+            presence: { if: :password_required? },
+            length: { minimum: 6, if: :password_required? }
 
   validates :email,
-    uniqueness: { case_sensitive: false },
-    presence: true,
-    email_format: true
+            uniqueness: { case_sensitive: false },
+            presence: true,
+            email_format: true
 
   validates :role,
-    presence: true,
-    inclusion: { in: ROLES }
+            presence: true,
+            inclusion: { in: ROLES }
 
   ROLES.each do |r|
     define_method "#{r}?" do

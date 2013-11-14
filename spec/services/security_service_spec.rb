@@ -3,7 +3,7 @@ require "spec_helper"
 describe SecurityService do
   context ".login" do
     it "stores the user id in session" do
-      user = stub(id: 1)
+      user = double(id: 1)
       session = {}
 
       SecurityService.login(user, session)
@@ -26,7 +26,7 @@ describe SecurityService do
     end
 
     it "finds a matching user based on id" do
-      current_user = stub
+      current_user = double
       session = { "user_id" => 1 }
 
       User.stub(:where) { [current_user] }
@@ -45,8 +45,8 @@ describe SecurityService do
 
   context ".authenticate" do
     let(:session_params) { { email: "a@b.com", password: "secret" } }
-    let(:current_user) { stub.as_null_object }
-    let(:session) { stub.as_null_object }
+    let(:current_user) { double.as_null_object }
+    let(:session) { double.as_null_object }
 
     it "returns nil if no user has the supplied email" do
       User.stub(:find_by) { nil }

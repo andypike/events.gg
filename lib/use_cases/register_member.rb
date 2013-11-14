@@ -1,4 +1,4 @@
-class RegistrationService
+class RegisterMember
   def self.register(user_params, session)
     user = User.new(user_params)
     user.role = "normal"
