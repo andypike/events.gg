@@ -1,9 +1,9 @@
 require "spec_helper"
 
 describe RegisterMember do
-  let(:listener) { double.as_null_object }
+  let(:listener) { fake }
   let(:params) { attributes_for(:user) }
-  let(:session_store) { double }
+  let(:session_store) { fake }
 
   describe "#register" do
     before do

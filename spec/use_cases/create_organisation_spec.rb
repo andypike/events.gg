@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe CreateOrganisation do
-  let(:listener) { double.as_null_object }
+  let(:listener) { fake }
   let(:manager) { create :user }
   let(:params) { attributes_for(:organisation) }
 
