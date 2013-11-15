@@ -8,9 +8,8 @@ class AuthenticateUser
 
   def authenticate
     user = User.find_by(email: @params[:email])
-    authenticated = user && user.authenticate(@params[:password])
 
-    if authenticated
+    if authenticated?(user)
       SecurityService.login(user, @session)
       publish :success, user
     else
@@ -19,6 +18,10 @@ class AuthenticateUser
   end
 
   private
+
+    def authenticated?(user)
+      user && user.authenticate(@params[:password])
+    end
 
     def secure_params(params)
       ActionController::Parameters.new(params).permit(:email, :password)
