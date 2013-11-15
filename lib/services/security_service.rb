@@ -1,18 +1,6 @@
 class SecurityService
   LOGIN_SESSION_KEY = "user_id"
 
-  def self.authenticate(session_params, session)
-    user = User.find_by(email: session_params[:email])
-    authenticated = user && user.authenticate(session_params[:password])
-
-    if authenticated
-      login(user, session)
-      return user
-    end
-
-    nil
-  end
-
   def self.login(user, session)
     session[LOGIN_SESSION_KEY] = user.id
   end

@@ -36,36 +36,4 @@ describe SecurityService do
       SecurityService.current_user(session).should be_nil
     end
   end
-
-  context ".authenticate" do
-    let(:params) { { email: "a@b.com", password: "secret" } }
-    let(:session) { fake }
-
-    context "when authentication fails" do
-      it "returns nil if no user has the supplied email" do
-        SecurityService.authenticate(params.merge(email: "c@d.com"), session).should be_nil
-      end
-
-      it "returns nil if a user is found by email but the password doesn't match" do
-        SecurityService.authenticate(params, session).should be_nil
-      end
-    end
-
-    context "when authentication succeeds" do
-      let!(:current_user) { create :user, email: "a@b.com" }
-
-      before do
-        SecurityService.stub(:login)
-      end
-
-      it "authenticates the matching user and returns it if vaild" do
-        SecurityService.authenticate(params, session).should == current_user
-      end
-
-      it "logs in the user if it authenticates" do
-        SecurityService.authenticate(params, session)
-        expect(SecurityService).to have_received(:login)
-      end
-    end
-  end
 end
