@@ -1,6 +1,8 @@
 events.gg
 =========
 
+[![Code Climate](https://codeclimate.com/github/andypike/events.gg.png)](https://codeclimate.com/github/andypike/events.gg)
+
 What's this all about then?
 ---------------------------
 
